@@ -40,16 +40,20 @@ svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/
 #sed -i '$a src-git helloworld https://github.com/Mattaclp/helloworld' feeds.conf.default
 
 # Add immortalwrt packages
+#sed -i '$a src-git immortalwrtpackages https://github.com/chiwaicw/immortalwrtpackages' feeds.conf.default
+#sed -i '$a src-git immortalwrtluci https://github.com/chiwaicw/immortalwrtluci' feeds.conf.default
+sed -i '$a src-git immortalwrtpackages https://github.com/chiwaicw/immortalwrtpackagesslim' feeds.conf.default
+sed -i '$a src-git immortalwrtluci https://github.com/chiwaicw/immortalwrtlucislim' feeds.conf.default
+#svn co https://github.com/chiwaicw/immortalwrtpackages/trunk/net/gowebdav package/lean/gowebdav
+#svn co https://github.com/chiwaicw/immortalwrtluci/trunk/applications/luci-app-gowebdav package/lean/luci-app-gowebdav
+git clone https://github.com/rufengsuixing/luci-app-adguardhome.git
+mv luci-app-adguardhome package/lean/
 #sed -i '$a src-git projectpackages https://github.com/immortalwrt/packages.git;openwrt-18.06' feeds.conf.default
 #sed -i '$a src-git projectluci https://github.com/immortalwrt/luci.git;openwrt-18.06-k5.4' feeds.conf.default
 #sed -i '$a src-git packagesImmortalWrt https://github.com/kwokwai6618/packages-ImmortalWrt.git;openwrt-18.06' feeds.conf.default
 #sed -i '$a src-git luciImmortalWrt https://github.com/kwokwai6618/luci-ImmortalWrt.git;openwrt-18.06' feeds.conf.default
 #sed -i '$a src-git immortalwrtpackages https://github.com/Mattaclp/immortalwrtpackages' feeds.conf.default
 #sed -i '$a src-git immortalwrtluci https://github.com/Mattaclp/immortalwrtluci' feeds.conf.default
-sed -i '$a src-git immortalwrtpackages https://github.com/chiwaicw/immortalwrtpackages' feeds.conf.default
-sed -i '$a src-git immortalwrtluci https://github.com/chiwaicw/immortalwrtluci' feeds.conf.default
-git clone https://github.com/rufengsuixing/luci-app-adguardhome.git
-mv luci-app-adguardhome package/lean/
 #svn co https://github.com/kenzok8/openwrt-packages/trunk/adguardhome package/AdGuardHome
 #svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-adguardhome package/luci-app-adguardhome
 #svn co https://github.com/immortalwrt/packages/trunk/utils/filebrowser package/filebrowser
@@ -66,8 +70,8 @@ mv luci-app-adguardhome package/lean/
 # add aliyundrive
 #git clone https://github.com/jerrykuku/go-aliyundrive-webdav.git
 #rm -rf package/lean/aliyundrive-webdav && mv go-aliyundrive-webdav package/lean/
-git clone https://github.com/jerrykuku/luci-app-go-aliyundrive-webdav.git
-mv luci-app-go-aliyundrive-webdav package/lean/
+#git clone https://github.com/jerrykuku/luci-app-go-aliyundrive-webdav.git
+#mv luci-app-go-aliyundrive-webdav package/lean/
 #rm -rf package/lean/luci-app-aliyundrive-webdav && mv luci-app-go-aliyundrive-webdav package/lean/
 
 # add argon-config
@@ -87,8 +91,8 @@ mv luci-app-vssr package/lean/
 #mv casaJJJos package/lean/
 
 # add JD
-git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git
-mv luci-app-jd-dailybonus package/lean/
+#git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git
+#mv luci-app-jd-dailybonus package/lean/
 #rm -rf package/lean/luci-app-jd-dailybonus && mv luci-app-jd-dailybonus package/lean/
 
 # add DDNSTO
@@ -144,11 +148,11 @@ mv target.mk target/linux/armvirt/64/
 #sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
 
 # add diskman
-rm -rf package/lean/luci-app-diskman
-rm -rf package/lean/parted
-svn co https://github.com/lisaac/luci-app-diskman/trunk/applications/luci-app-diskman package/lean/luci-app-diskman
-git clone https://github.com/lisaac/luci-app-diskman.git
-mkdir -p package/lean/parted && cp -i luci-app-diskman/Parted.Makefile package/lean/parted/Makefile
+#rm -rf package/lean/luci-app-diskman
+#rm -rf package/lean/parted
+#svn co https://github.com/lisaac/luci-app-diskman/trunk/applications/luci-app-diskman package/lean/luci-app-diskman
+#git clone https://github.com/lisaac/luci-app-diskman.git
+#mkdir -p package/lean/parted && cp -i luci-app-diskman/Parted.Makefile package/lean/parted/Makefile
 
 # add diskman
 #svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/luci-app-diskman package/lean/luci-app-diskman
@@ -167,11 +171,11 @@ mv luci-app-koolproxyR package/lean/
 
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/lean/luci-app-openclash
 #git clone -b master https://github.com/vernesong/OpenClash.git package/lean/luci-app-openclash  #openclash出国软件
-git clone https://github.com/frainzy1477/luci-app-clash.git package/lean/luci-app-clash  #clash出国软件
+#git clone https://github.com/frainzy1477/luci-app-clash.git package/lean/luci-app-clash  #clash出国软件
 
 #添加smartdns
-git clone https://github.com/pymumu/openwrt-smartdns package/smartdns
-git clone -b lede https://github.com/pymumu/luci-app-smartdns.git package/luci-app-smartdns
+#git clone https://github.com/pymumu/openwrt-smartdns package/smartdns
+#git clone -b lede https://github.com/pymumu/luci-app-smartdns.git package/luci-app-smartdns
 
 # Add po2lmo
 git clone https://github.com/openwrt-dev/po2lmo.git
